@@ -32,7 +32,6 @@ class Post {
 
 app.get("/", (req, res) => {
   res.render("index.ejs", { posts, name });
-  console.log(name);
 });
 
 app.post("/start", (req, res) => {
@@ -46,7 +45,6 @@ app.get("/addPost", (req, res) => {
 
 app.post("/addPost", (req, res) => {
   new Post(req.body.name, req.body.content);
-  console.log(posts);
   res.redirect("/");
 });
 
