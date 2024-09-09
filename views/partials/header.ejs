@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title><%= name %>'s Blog</title>
+  </head>
+  <body>
+      <div class="start__container <% if (locals.name) { %> hidden <% } %>">
+        <div class="start__content">
+          <h2 class="start__heading">Enter your name</h2>
+          <form action="/start" method="post" class="start__form">
+            <div class="start__input-box">
+              <input type="text" class="start__input" name="name" autocomplete="off" required />
+            </div>
+            <div class="start__submit-box">
+              <input type="submit" value="Enter" class="start__submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+    
+    <header>
+      <nav class="nav">
+        <div class="nav__container">
+          <div class="nav__heading-box">
+            <h2 class="heading-secondary"><%= name %>'s Blog</h2>
+          </div>
+          <div class="nav__list-box">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="link nav__link" href="/">Home</a></li>
+              <li class="nav__item"><a class="link nav__link" href="/addPost">Add Post</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>

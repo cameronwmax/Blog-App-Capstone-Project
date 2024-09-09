@@ -1,0 +1,19 @@
+<main class="posts">
+  <div class="container posts__container">
+    <ul class="posts__list">
+      <% posts.forEach((post, i) => { %>
+      <!-- prettier-ignore -->
+
+      <li class="posts__list-item <% if (i % 2 ===0) { %>posts--slide-left<% } else {%> posts--slide-right<% } %>">
+        <div class="posts__item">
+          <div class="heading-box">
+            <h3 class="heading-tertiary">@<span class="posts__user"><%= post.author %></span></h3>
+            <span class="posts__date"><%= post.date %></span>
+          </div>
+          <p class="posts__text"><%= post.content %></p>
+        </div>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+</main>

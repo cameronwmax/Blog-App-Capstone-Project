@@ -1,0 +1,30 @@
+<%- include('partials/header.ejs', locals.name) %>
+<!-- prettier-ignore -->
+
+<% if (posts.length === 0) { %>
+<main class="home">
+  <div class="container home__container <% if (!locals.name) { %> hide <% } %>">
+    <div class="home__heading-box">
+      <h1 class="heading-primary">Welcome to your blog <%= name %></h1>
+    </div>
+    <div class="home__content">
+      <div class="home__text-box">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam corporis mollitia nobis sunt,
+          quisquam veniam rem? Beatae enim eos cum vel expedita neque unde laborum? Maiores dolorum
+          voluptatem illo voluptatum.
+        </p>
+      </div>
+      <div class="home__list-box">
+        <ul class="home__list">
+          <li class="home__item">Create Posts</li>
+          <li class="home__item">View Posts</li>
+          <li class="home__item">Edit/Delete Posts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+<% } else{%> <%- include('viewPosts.ejs') %> <% } %>
+<!-- prettier-ignore -->
+<%- include('partials/footer.ejs') %>

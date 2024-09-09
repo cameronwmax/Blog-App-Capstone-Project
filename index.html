@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./public/styles/styles.css" />
+    <title>My Blog</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="nav__container">
+          <div class="nav__heading-box">
+            <h2 class="heading-secondary">My Blog</h2>
+          </div>
+          <div class="nav__list-box">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="link nav__link" href="/">Home</a></li>
+              <li class="nav__item"><a class="link nav__link" href="#">Add Post</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="add-posts">
+      <div class="add-posts__container">
+        <h3 class="add-posts__heading">Add post</h3>
+        <div class="add-posts__form-box">
+          <form action="/addPost" method="post" class="add-posts__form">
+            <div class="add-posts__name-box">
+              <input
+                type="text"
+                name="name"
+                value="<% if (locals.name) { %><%= name %><% } %>"
+                placeholder="<% if (!locals.name) { %>Name<% } %>"
+                class="add-posts__name"
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <div class="add-posts__content-box">
+              <textarea
+                name="content"
+                class="add-posts__content"
+                placeholder="Write your post"
+                required
+              ></textarea>
+            </div>
+
+            <div class="add-posts__btn-box">
+              <input type="submit" value="Add" class="add-posts__btn" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p>Copyright &copy; 2024 Cameron Maxwell</p>
+      </div>
+    </footer>
+  </body>
+</html>
