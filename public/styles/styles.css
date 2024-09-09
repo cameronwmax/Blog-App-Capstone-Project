@@ -307,12 +307,40 @@ body {
   font-size: 1.6rem;
   line-height: 1.6;
   font-weight: 400;
+  margin-bottom: 2rem;
 }
 
 .posts__date {
   font-size: 1.2rem;
   color: #adb5bd;
   opacity: 0.7;
+}
+
+.posts__form-delete {
+  display: flex;
+  justify-content: end;
+}
+
+.posts__delete-btn {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-family: "Robot", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  outline: none;
+  border: var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+  background: none;
+  transition: all 0.3s;
+}
+
+.posts__delete-btn:focus,
+.posts__delete-btn:hover {
+  background-color: var(--main);
+  color: var(--main-black);
+  transform: translateY(-3px);
 }
 
 /* //////// ADD POSTS /////////// */

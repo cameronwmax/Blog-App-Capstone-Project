@@ -48,6 +48,11 @@ app.post("/addPost", (req, res) => {
   res.redirect("/");
 });
 
+app.post("/delete", (req, res) => {
+  posts.splice(req.body.index, 1);
+  res.redirect("/");
+});
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
