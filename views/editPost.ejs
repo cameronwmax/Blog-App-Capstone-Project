@@ -1,0 +1,17 @@
+<%- include('partials/header.ejs', locals.name) %>
+
+<main class="edit">
+  <div class="edit__container">
+    <h3 class="edit__heading">Edit post</h3>
+    <h4 class="edit__user">@Cameron</h4>
+    <form action="/save" method="post" class="edit__form">
+      <div class="edit__content-box">
+        <textarea name="content" class="add-posts__content"><%= posts[index].content %></textarea>
+      </div>
+      <input type="hidden" name="index" value="<%= index %>" />
+      <input type="submit" value="Save" class="edit__save-btn" />
+    </form>
+  </div>
+</main>
+
+<%- include('partials/footer.ejs', ) %>

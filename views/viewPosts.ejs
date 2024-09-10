@@ -11,10 +11,16 @@
             <span class="posts__date"><%= post.date %></span>
           </div>
           <p class="posts__text"><%= post.content %></p>
-          <form action="/delete", method="post" class=posts__form-delete>
-            <input type="hidden" name="index" value="<%= i %>">
-            <input type="submit" value="Delete" class="posts__delete-btn"> 
-          </form>
+          <div class="posts__btn-container">
+            <form action="/edit", method="post" class=posts__form-edit>
+              <input type="hidden" name="index" value="<%= i %>">
+              <input type="submit" value="Edit" class="btn"> 
+            </form>
+            <form action="/delete", method="post" class=posts__form-delete>
+              <input type="hidden" name="index" value="<%= i %>">
+              <input type="submit" value="Delete" class="btn"> 
+            </form>
+          </div>
         </div>
       </li>
       <% }) %>

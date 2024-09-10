@@ -53,6 +53,18 @@ app.post("/delete", (req, res) => {
   res.redirect("/");
 });
 
+app.post("/edit", (req, res) => {
+  const index = req.body.index;
+  res.render("editPost.ejs", { posts, name, index });
+});
+
+app.post("/save", (req, res) => {
+  const index = req.body.index;
+  const newContent = req.body.content;
+  posts[index].content = newContent;
+  res.redirect("/");
+});
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
